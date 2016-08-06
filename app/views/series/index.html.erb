@@ -1,0 +1,27 @@
+<h3>Series That We Have So Far<h3>
+
+<%= link_to 'Add Series', new_series_path %>
+
+<table border='1'>
+  <tr>
+  	<td>Title</td>
+  	<td>Level</td>
+  	<td>On Development</td>
+  	<td></td>
+  </tr>
+
+  <% if @series.nil? %>
+    <tr>
+      <td colspan='3'>No Series Yet ;)</td>
+    </tr>
+  <% else %>
+    <% @series.each do |s| %>
+      <tr>
+        <td><%= s.title %></td>
+        <td><%= s.level.titleize %></td>
+        <td><%= s.finish? ? 'Complete' : 'On Progress' %></td>
+  		<td><%= link_to 'Detail', series_path(s) %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>

@@ -1,0 +1,23 @@
+<%= @series.title %>
+
+<div>
+  Level : <%= @series.level.titleize %>
+</div>
+
+<div>
+  Excerpt : <%= @series.excerpt %>
+</div>
+
+<div>
+  Cover : <%= @series.cover %>
+</div>
+
+<div>
+  Is Finish? <%= @series.finish? ? 'Yay' : 'Nay' %>
+</div>
+
+<div>
+  <%= link_to 'Back', series_index_path %>
+  <%= link_to 'Edit', edit_series_path(@series) %>
+  <%= link_to 'Delete', series_path(@series), method: :delete, data: {confirm: 'Really?'} %>
+</div>

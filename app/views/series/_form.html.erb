@@ -1,0 +1,41 @@
+<%= form_for(@series) do |f| %>
+  <div>
+  	<%= f.label :title %>
+  	<%= f.text_field :title %>
+  	<% if @series.errors.any? && @series.errors[:title].present? %>
+  	  <%= @series.errors[:title].first %>
+    <% end %>
+  </div>
+  <div>
+  	<%= f.label :level %>
+  	<%= f.select :level, @levels %>
+  	<% if @series.errors.any? && @series.errors[:level].present? %>
+  	  <%= @series.errors[:level].first %>
+    <% end %>
+  </div>
+  <div>
+  	<%= f.label :excerpt %>
+  	<%= f.text_area :excerpt %>
+  	<% if @series.errors.any? && @series.errors[:excerpt].present? %>
+  	  <%= @series.errors[:excerpt].first %>
+    <% end %>
+  </div>
+  <div>
+  	<%= f.label :cover %>
+  	<%= f.text_field :cover %>
+  	<% if @series.errors.any? && @series.errors[:cover].present? %>
+  	  <%= @series.errors[:cover].first %>
+    <% end %>
+  </div>
+  <div>
+  	<%= f.label :finsih %>
+  	<%= f.check_box :finish %>
+  	<% if @series.errors.any? && @series.errors[:finish].present? %>
+  	  <%= @series.errors[:finish].first %>
+    <% end %>
+  </div>
+  <div>
+  	<%= f.submit 'Save It' %>
+  	<%= link_to 'Back', series_index_path %>
+  </div>
+<% end %>
