@@ -45,7 +45,7 @@ class SeriesController < ApplicationController
 
   private
   def series_params
-    params.require(:series).permit(:title, :level, :excerpt, :cover, :finish)
+    params.require(:series).permit(:title, :level, :excerpt, :cover, :cover_cache, :finish)
   end
 
   def levels_dropdown
