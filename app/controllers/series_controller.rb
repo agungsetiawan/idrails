@@ -11,7 +11,7 @@ class SeriesController < ApplicationController
   def create
     @series = Series.new(series_params)
     if @series.save
-      redirect_to series_index_path, notice: 'All is good'
+      redirect_to series_path(@series), notice: 'All is good'
     else
       @levels = levels_dropdown
       render 'new'
@@ -30,7 +30,7 @@ class SeriesController < ApplicationController
   def update
     @series = Series.find(params[:id])
     if @series.update(series_params)
-      redirect_to series_index_path, notice: 'All is good'
+      redirect_to series_path(@series), notice: 'All is good'
     else
       @levels = levels_dropdown
       render 'edit'
