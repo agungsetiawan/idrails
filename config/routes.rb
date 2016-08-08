@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  resources :series
-  resources :articles
+  scope '/kepo' do
+    resources :series
+    resources :articles
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
