@@ -1,0 +1,35 @@
+<%= form_for @article, html: {multipart: true} do |f| %>
+  <div>
+  	<%= f.label :title %>
+  	<%= f.text_field :title %>
+  	<% if @article.errors.any? && @article.errors[:title].present? %>
+  	  <%= @article.errors[:title].first %>
+    <% end %>
+  </div>
+  <div>
+    <%= f.label :series_id %>
+    <%= f.select :series_id, @series %>
+    <% if @article.errors.any? && @article.errors[:series_id].present? %>
+      <%= @article.errors[:series_id].first %>
+    <% end %>
+  <div>
+  	<%= f.label :content %>
+  	<%= f.text_area :content %>
+  	<% if @article.errors.any? && @article.errors[:content].present? %>
+  	  <%= @article.errors[:content].first %>
+    <% end %>
+  </div>
+  <div>
+  	<%= f.label :cover %>
+  	<%= f.file_field :cover %>
+    <%= image_tag(@article.cover) if @article.cover? %>
+    <%= f.hidden_field :cover_cache %>
+  	<% if @article.errors.any? && @article.errors[:cover].present? %>
+  	  <%= @article.errors[:cover].first %>
+    <% end %>
+  </div>
+  <div>
+  	<%= f.submit 'Save It' %>
+  	<%= link_to 'Back', articles_path %>
+  </div>
+<% end %>

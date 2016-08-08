@@ -1,0 +1,24 @@
+<h3>All Articles We Have, So Far</h3>
+
+<%= link_to 'Add Article', new_article_path %>
+
+<table border='1'>
+  <tr>
+  	<td>Title</td>
+  	<td>Published</td>
+  	<td></td>
+  </tr>
+  <% if @articles.empty? %>
+    <tr>
+      <td colspan='3'>No Article Yet ;)</td>
+    </tr>
+  <% else %>
+    <% @articles.each do |a| %>
+      <tr>
+        <td><%= a.title %></td>
+        <td><%= a.published? ? 'Live' : 'On Progress' %></td>
+  		<td><%= link_to 'Detail', article_path(a) %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>

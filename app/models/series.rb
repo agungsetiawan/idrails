@@ -1,6 +1,5 @@
 class Series < ActiveRecord::Base
-  #the variables
-  #title, level, excerpt, cover, finish
+  has_many :articles
 
   mount_uploader :cover, CoverUploader
 
@@ -11,3 +10,10 @@ class Series < ActiveRecord::Base
   validates :cover, presence: true
   validates :level, presence: true
 end
+
+#the variables
+  #title
+  #level
+  #excerpt
+  #cover
+  #finish
