@@ -1,7 +1,7 @@
 <%= @article.title %>
 
 <div>
-  Series : <%= @article.series.title %>
+  Series : <%= link_to @article.series.title, series_path(@article.series) %>
 </div>
 
 <div>

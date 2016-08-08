@@ -17,6 +17,30 @@
   Is Finish? <%= @series.finish? ? 'Yay' : 'Nay' %>
 </div>
 
+<% if @series.articles.any? %>
+  Articles
+  <table border='1'>
+	<tr>
+	  <td>Title</td>
+	  <td>Published</td>
+	  <td></td>
+	</tr>
+	<% @series.articles.each do |a| %>
+	  <tr>
+	    <td><%= a.title %></td>
+	    <td><%= a.published? ? 'Live' : 'On Progress' %></td>
+		<td><%= link_to 'Detail', article_path(a) %></td>
+	  </tr>
+	<% end %>
+  </table>
+<% else %>
+  No Article
+<% end %>
+
+<div>
+  <%= link_to 'Add Article', new_article_path(series_id: @series.id) %>
+</div>
+
 <div>
   <%= link_to 'Back', series_index_path %>
   <%= link_to 'Edit', edit_series_path(@series) %>

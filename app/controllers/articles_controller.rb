@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   end
 
   def new
-    @article = Article.new
+    @article = Article.new(series_id: params[:series_id])
     series
   end
 
