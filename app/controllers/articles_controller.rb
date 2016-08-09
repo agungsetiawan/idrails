@@ -37,6 +37,12 @@ class ArticlesController < ApplicationController
     end
   end
 
+  #public area
+  def public_show
+    @article = Article.find(params[:id])
+  end
+  #end of public area
+
   def destroy
     article = Article.find(params[:id])
     article.delete

@@ -16,7 +16,7 @@ class CoverUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  process resize_to_fit: [270, 270]
+  # process resize_to_fit: [270, 270]
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
