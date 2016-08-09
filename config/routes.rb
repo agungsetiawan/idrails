@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :articles
   end
 
-  get '/a/:id', to: 'articles#public_show', as: 'public_article'
+  get '/a/*series/:id', to: 'articles#public_show', as: 'public_article'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
