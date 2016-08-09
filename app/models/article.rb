@@ -6,6 +6,16 @@ class Article < ActiveRecord::Base
   validates :title, presence: true
   validates :content, presence: true
   validates :cover, presence: true
+
+  def to_param
+    # format(
+    #   '%s-jual-%s%s',
+    #   self.id.to_s(36),
+    #   category_name,
+    #   self.name.parameterize
+    # )
+    "#{self.id}-#{self.title.parameterize}"
+  end
 end
 
 #the variables

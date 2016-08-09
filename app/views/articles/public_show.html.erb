@@ -1,0 +1,84 @@
+<div class="col-md-12 col-sm-12 col-xs-12 clearfix episodeportionmain">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12 col-sm-12 col-xs-12 episodeportion">
+                <div class="col-md-12">
+                    <h2 id="mobz" style="padding-bottom:30px;"> Seri : <%= @article.series.title %> </h2>
+                    <!-- <span id="inner2" style="text-align:right">Free</span>-->
+                </div>
+                <!--Left Portion-->
+                <div class="col-md-8 col-sm-8 col-xs-12 clearfix">
+
+                    <!--First Article-->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix" id="abovespace">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <a href="#" class="styling017">
+                                <h4 class="newstylishheadings">
+                                    <%= @article.title %>
+                                </h4>
+                            </a>
+                            <span class="spanbottom">By Morgan Freeman</span>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 featured">
+                            <%= image_tag(@article.cover, class: 'img-responsive applystyle') %>
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <%= markdown(@article.content) %>
+                        </div>
+                        
+                    </div>
+
+                </div>
+                <!--Left Portion End-->
+                <!--Right Porion Portion-->
+                <div class="col-md-4 col-sm-4 col-xs-12 rightpor">
+                    <div class="col-md-12 clearfix">
+                        <h3> Artikel Lain Dalam Seri ini</h3>
+                    </div>
+
+                    <!-- <div class="col-md-12 clearfix">
+                    	<%= image_tag(@article.cover, class: 'img-responsive applystyle') %>
+                    </div>
+                    <div class="col-md-12 clearfix stylingparas ">
+                        <a href="#">
+                            <p> Leap over weight-loss hurdles and rev up your metabolism with these 9 simple</p>
+                            <span>Brad Washington</span>
+                        </a>
+                    </div> -->
+
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 spacing6 clearfix">
+                        <% @article.series.articles.each do |article| %>
+                          <div class="coloringdvide">
+                            <div class="body-text-container clearfix col-xs-12 col-sm-12 col-md-12 coloringdvide11" style="border: 1px solid #DCDBDB">
+
+                                <div class="col-md-1 col-xs-1 col-sm-1 clearfix">
+                                    <p class="versionparatutorials"></p>
+                                </div>
+
+                                <div class="col-md-8 col-xs-8 col-sm-8 spacing1 spacingnew clearfix">
+
+                                    <a href="#" style="text-decoration:none">  
+                                    	<% if params[:id].to_i == article.id %>
+                                    	  <span class="inner1 innertext1"><%= article.title %></span></a>
+                                    	<% else %>
+                                    	  <span class="inner1 innertext1"><%= link_to article.title, public_article_path(article.series.title.parameterize, article) %></span></a>
+                                    	<% end %>
+                                    <!-- <span id="innert2">Free</span> -->
+                                </div>
+
+                                <div class="col-md-3 col-xs-3 col-sm-3 spacing20 spacing4" style="padding-bottom:15px;padding-top:10px;">
+                                    <span id="spantutorial">&nbsp</span>
+                                </div>
+                            </div>
+                          </div>
+                        <% end %>
+                    </div>
+                </div>
+                <!--Right Portion End-->
+            </div>
+        </div>
+    </div>
+</div>
