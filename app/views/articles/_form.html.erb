@@ -14,7 +14,7 @@
     <% end %>
   <div>
   	<%= f.label :content %>
-  	<%= f.text_area :content %>
+  	<%= f.text_area :content, cols: 150, rows: 80 %>
   	<% if @article.errors.any? && @article.errors[:content].present? %>
   	  <%= @article.errors[:content].first %>
     <% end %>
