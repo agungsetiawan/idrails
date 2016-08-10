@@ -43,6 +43,10 @@ class SeriesController < ApplicationController
     redirect_to series_index_path, notice: "#{@series.title.titleize} deleted"
   end
 
+  def public_show
+    @series = Series.find(params[:id])
+  end
+
   private
   def series_params
     params.require(:series).permit(:title, :level, :excerpt, :cover, :cover_cache, :finish)

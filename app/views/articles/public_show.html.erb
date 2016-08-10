@@ -4,7 +4,7 @@
 
             <div class="col-md-12 col-sm-12 col-xs-12 episodeportion">
                 <div class="col-md-12">
-                    <h2 id="mobz" style="padding-bottom:30px;"> Seri : <%= @article.series.title %> </h2>
+                    <h2 id="mobz" style="padding-bottom:30px;"> Seri : <%= link_to @article.series.title, public_series_path(@article.series) %> </h2>
                     <!-- <span id="inner2" style="text-align:right">Free</span>-->
                 </div>
                 <!--Left Portion-->

@@ -9,6 +9,10 @@ class Series < ActiveRecord::Base
   validates :excerpt, presence: true
   validates :cover, presence: true
   validates :level, presence: true
+
+  def to_param
+    "#{self.id}-#{self.title.parameterize}"
+  end
 end
 
 #the variables

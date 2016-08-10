@@ -1,0 +1,98 @@
+<!--Content-->
+<div class="col-md-12 col-sm-12 col-xs-12 versioncon" style="background: url('/assets/back3.jpg')">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="col-md-1"></div>
+
+        <div class="col-md-2 col-sm-12 col-xs-12">
+        	<%= image_tag(@series.cover, class: 'applystyle img-responsive') %>
+        </div>
+
+        <div class="col-md-8 col-sm-12 col-xs-12">
+            <h1> <%= @series.title %></h1>
+            <p>
+            	<%= @series.excerpt %>
+            </p>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+
+    <!--<div class="col-md-12 contentportionparaspan">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <span><button type="button" class="btn buttonstyling">Join Now</button></span>
+             </div>
+        <div class="col-md-3"></div>
+
+    </div>-->
+
+</div>
+
+<!--Crumb-->
+<div style="clear:both"></div>
+<div class="col-md-12 clearfix versiontiming">
+    <!--<p style="text-align: center;padding-top:30px;padding-bottom:30px; background-color: #292C31; color: white;">Home | Comboshop</p>-->
+    <div class="container">
+        <span class="num"><%= @series.articles.count %></span> <span class="less"> Tulisan</span>
+        <span class="spaceme"></span>
+        <!-- <span class="num">11</span> <span class="less"> Minutes</span> -->
+        <!--<span>77 Minutes Lessons</span>-->
+    </div>
+</div>
+
+
+<!--Two Sections-->
+<div class="clearfix col-xs-12 col-sm-12 col-md-12 lessonspor">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+
+                <div class="clearfix col-xs-12 col-sm-12 col-md-12" style="padding-top:30px;">
+
+                    <h2 class="seriesheading" style="padding-bottom: 30px !important;"> Work, Learn & Code</h2>
+
+                    <% num = 1 %>
+                    <% @series.articles.each do |article| %>
+                      <div class="coloringdvide" style="width:80%;margin:0 auto">
+                        <div class="body-text-container clearfix col-xs-12 col-sm-12 col-md-12 coloringdvide11" style="border: 1px solid #DCDBDB">
+
+                            <div class="col-md-1 col-xs-1 col-sm-1 clearfix">
+                                <p class="versionpara">
+                                	<%= num %>
+                                	<% num = num.to_i + 1 %>
+                                </p>
+
+                            </div>
+
+
+                            <div class="col-md-8 col-xs-8 col-sm-8 spacing1 spacingnew clearfix">
+                            	<%= link_to public_article_path(@series.title, article.id) do %>
+                            	  <span class="inner1"><%= article.title %></span>
+                            	<% end %>
+
+                                <!-- <a href="#" style="text-decoration:none">  
+                                	
+                                </a> -->
+                                <!-- <span id="inner2">Free</span> -->
+                            </div>
+
+
+                            <div class="col-md-3 col-xs-3 col-sm-3 spacing2 spacing4" style="padding-bottom:15px;padding-top:15px;">
+                            	<span>&nbsp</span>
+                                <!-- <span>11:12</span> -->
+                            </div>
+                        </div>
+                      </div>
+                    <% end %>
+                </div>
+            </div>
+            <div style="clear:both"></div>
+
+            <% unless @series.finish %>
+              <div class="col-md-12 bottomtext">
+              	Seri tulisan ini masih akan berlanjut. Sering-sering cek ya.
+              </div>
+            <% end %>
+
+        </div>
+    </div>
+</div>
