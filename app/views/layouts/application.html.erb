@@ -32,13 +32,15 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">LOGO</a>
+                    <a class="navbar-brand" href="#">idrails</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse customCollapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav" style="margin:0px;padding-top:5px;">
                         <li><a href="#" style="color:white;">Library <span class="sr-only">(current)</span></a></li>
-                        <li><a href="#" style="color:white;">Skills</a></li>
+                        <li>
+                            <%= link_to "Series", public_series_index_path('tutorial-ruby-on-rails'), style: 'color:white' %>
+                        </li>
                         <li style="color:white;" class=" dropdown" id="changecolors">
                             <a href="#" style="color:white;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Discusions <span class="caret"></span></a>
                             <ul class="dropdown-menu">

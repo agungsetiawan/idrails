@@ -47,6 +47,10 @@ class SeriesController < ApplicationController
     @series = Series.find(params[:id])
   end
 
+  def public_index
+    @series = Series.all
+  end
+
   private
   def series_params
     params.require(:series).permit(:title, :level, :excerpt, :cover, :cover_cache, :finish)

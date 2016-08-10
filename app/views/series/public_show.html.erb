@@ -65,7 +65,7 @@
 
 
                             <div class="col-md-8 col-xs-8 col-sm-8 spacing1 spacingnew clearfix">
-                            	<%= link_to public_article_path(@series.title, article.id) do %>
+                            	<%= link_to public_article_path(@series.title.parameterize, article.id) do %>
                             	  <span class="inner1"><%= article.title %></span>
                             	<% end %>
 

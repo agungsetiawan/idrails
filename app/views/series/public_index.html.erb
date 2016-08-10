@@ -1,0 +1,129 @@
+    <div class="col-md-12 col-sm-12 col-xs-12 contentportion" style="background: url('/assets/back1.jpg')">
+        <div class=" col-md-12">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <h1 style="font-size:40px;">
+                    The Kitchen Sink.
+                    <br />
+                    Every Single Video.
+                </h1>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+
+        <div class="col-md-12 contentportionpara">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <p style="padding-top:0px !important;font-size:19px !important;padding-bottom:80px;">
+                    In addition to the series above, there are hundreds <br />
+                    of individual lessons , each which dives into a single topic.
+                </p>
+            </div>
+            <div class="col-md-3"></div>
+
+        </div>
+
+        <!--<div class="col-md-12 contentportionparaspan">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <span><button type="button" class="btn buttonstyling">Join Now</button></span>
+                 </div>
+            <div class="col-md-3"></div>
+
+        </div>-->
+
+    </div>
+    <div style="clear:both"></div>
+
+    <!--Crumb-->
+    <!-- <div class="col-md-12 clearfix" style="background: #343434;"> -->
+        <!--<p style="text-align: center;padding-top:30px;padding-bottom:30px; background-color: #292C31; color: white;">Home | Comboshop</p>-->
+        <!-- <div class="container">
+            <ol class="breadcrumb">
+                <li class="active;"><a href="#" style="background: rgba(217, 237, 247, 0.64); padding: 5px;" class="ap">Current</a></li>
+                <li><a href="#">Archived</a></li>
+
+            </ol>
+        </div>
+    </div> -->
+
+    <!--Series-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 seriesportion">
+
+
+                <div class="clearfix col-xs-12 col-sm-12 col-md-12">
+
+                    <h2 class="seriesheading" style="padding-top: 30px !important; padding-bottom: 30px !important;"> The Series</h2>
+
+                    <% @series.each do |seri| %>
+                        <div class="clearfix col-xs-12 col-sm-3 col-md-3 portfolioItem">
+                            <div class="hover-class">
+                                <%= link_to public_series_path(seri) do %>
+                                  <span class="hover-icon">
+                                    <i class="fa fa-book fa-2x"></i>
+                                    <i class="fa fa-play-circle-o fa-2x"></i>
+                                  </span>
+                                  <%= image_tag(seri.cover, style: 'width:100%' ) %>
+                                <% end %>
+
+                                <p class="spanning"><%= seri.level.titleize %></p>
+                            </div>
+                            <div class="portfolioItemDesc">
+                                <%= link_to public_series_path(seri) do %>
+                                  <h4>
+                                    <%= seri.title.titleize %>
+                                  </h4>
+                                <% end %>
+
+                                <p class="affect">Artikel <span class="badge"><%= seri.articles.count %></span></p>
+                            </div>
+
+                        </div>
+                    <% end %>
+                </div>
+
+                <!-- <div class="clearfix col-xs-12 col-sm-12 col-md-12 upperspace">                    
+                    MORE THAN 4 DATA    
+                    
+                </div> -->
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <!--Pagination-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+
+                <div class="clearfix col-xs-12 col-sm-12 col-md-12" style="text-align:center">
+                    <nav>
+                        <ul class="pagination">
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
