@@ -32,7 +32,7 @@
 <div class="col-md-12 clearfix versiontiming">
     <!--<p style="text-align: center;padding-top:30px;padding-bottom:30px; background-color: #292C31; color: white;">Home | Comboshop</p>-->
     <div class="container">
-        <span class="num"><%= @series.articles.count %></span> <span class="less"> Tulisan</span>
+        <span class="num"><%= @series.published_articles.count %></span> <span class="less"> Tulisan</span>
         <span class="spaceme"></span>
         <!-- <span class="num">11</span> <span class="less"> Minutes</span> -->
         <!--<span>77 Minutes Lessons</span>-->
@@ -51,7 +51,7 @@
                     <h2 class="seriesheading" style="padding-bottom: 30px !important;"> Work, Learn & Code</h2>
 
                     <% num = 1 %>
-                    <% @series.articles.each do |article| %>
+                    <% @series.published_articles.each do |article| %>
                       <div class="coloringdvide" style="width:80%;margin:0 auto">
                         <div class="body-text-container clearfix col-xs-12 col-sm-12 col-md-12 coloringdvide11" style="border: 1px solid #DCDBDB">
 
@@ -65,7 +65,7 @@
 
 
                             <div class="col-md-8 col-xs-8 col-sm-8 spacing1 spacingnew clearfix">
-                            	<%= link_to article_path(@series.title.parameterize, article.id) do %>
+                            	<%= link_to article_path(@series.title.parameterize, article) do %>
                             	  <span class="inner1"><%= article.title %></span>
                             	<% end %>
 

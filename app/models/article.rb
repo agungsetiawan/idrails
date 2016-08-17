@@ -16,6 +16,14 @@ class Article < ActiveRecord::Base
     # )
     "#{self.id}-#{self.title.parameterize}"
   end
+
+  def self.published(id=nil)
+    if id
+      where(published: true, id: id).first
+    else
+      where(published: true)
+    end
+  end
 end
 
 #the variables

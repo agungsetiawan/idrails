@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
   def public_show
-    @article = Article.find(params[:id])
+    @article = Article.published(params[:id])
   end
 end

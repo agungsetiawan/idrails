@@ -4,6 +4,6 @@ class SeriesController < ApplicationController
   end
 
   def public_index
-    @series = Series.all
+    @series = Series.available
   end
 end

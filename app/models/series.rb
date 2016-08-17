@@ -13,6 +13,14 @@ class Series < ActiveRecord::Base
   def to_param
     "#{self.id}-#{self.title.parameterize}"
   end
+
+  def self.available
+    joins('RIGHT JOIN articles on series.id=articles.series_id WHERE articles.published=true').distinct
+  end
+
+  def published_articles
+    articles.published
+  end
 end
 
 #the variables
