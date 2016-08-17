@@ -60,7 +60,7 @@
                     <% @series.each do |seri| %>
                         <div class="clearfix col-xs-12 col-sm-3 col-md-3 portfolioItem">
                             <div class="hover-class">
-                                <%= link_to public_series_path(seri) do %>
+                                <%= link_to series_path(seri) do %>
                                   <span class="hover-icon">
                                     <i class="fa fa-book fa-2x"></i>
                                     <i class="fa fa-play-circle-o fa-2x"></i>
@@ -71,7 +71,7 @@
                                 <p class="spanning"><%= seri.level.titleize %></p>
                             </div>
                             <div class="portfolioItemDesc">
-                                <%= link_to public_series_path(seri) do %>
+                                <%= link_to series_path(seri) do %>
                                   <h4>
                                     <%= seri.title.titleize %>
                                   </h4>

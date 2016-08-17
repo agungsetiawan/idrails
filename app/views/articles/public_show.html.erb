@@ -4,7 +4,7 @@
 
             <div class="col-md-12 col-sm-12 col-xs-12 episodeportion">
                 <div class="col-md-12">
-                    <h2 id="mobz" style="padding-bottom:30px;"> Seri : <%= link_to @article.series.title, public_series_path(@article.series) %> </h2>
+                    <h2 id="mobz" style="padding-bottom:30px;"> Seri : <%= link_to @article.series.title, series_path(@article.series) %> </h2>
                     <!-- <span id="inner2" style="text-align:right">Free</span>-->
                 </div>
                 <!--Left Portion-->
@@ -64,7 +64,7 @@
                                     	<% if params[:id].to_i == article.id %>
                                     	  <span class="inner1 innertext1"><%= article.title %></span></a>
                                     	<% else %>
-                                    	  <span class="inner1 innertext1"><%= link_to article.title, public_article_path(article.series.title.parameterize, article) %></span></a>
+                                    	  <span class="inner1 innertext1"><%= link_to article.title, article_path(article.series.title.parameterize, article) %></span></a>
                                     	<% end %>
                                     <!-- <span id="innert2">Free</span> -->
                                 </div>
