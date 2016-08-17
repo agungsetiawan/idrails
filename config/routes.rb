@@ -4,9 +4,9 @@ Rails.application.routes.draw do
     resources :articles
   end
 
-  get '/s/tutorial-ruby-on-rails/:id', to: 'series#public_show', as: 'series'
-  get '/a/tutorial-ruby-on-rails/*series/:id', to: 'articles#public_show', as: 'article'
-  get '/s/*tutorial', to: 'series#public_index', as: 'series_index'
+  get '/s/tutorial-ruby-on-rails/:id', to: 'series#show', as: 'series'
+  get '/a/tutorial-ruby-on-rails/*series/:id', to: 'articles#show', as: 'article'
+  get '/s/*tutorial', to: 'series#index', as: 'series_index'
   get '/a/*tutorial', to: 'articles#index', as: 'articles'
 
 

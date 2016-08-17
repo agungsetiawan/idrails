@@ -1,9 +1,9 @@
 class SeriesController < ApplicationController
-  def public_show
+  def show
     @series = Series.find(params[:id])
   end
 
-  def public_index
+  def index
     @series = Series.available
   end
 end

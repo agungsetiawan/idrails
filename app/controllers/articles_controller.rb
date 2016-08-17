@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
     @articles = Article.published
   end
 
-  def public_show
+  def show
     @article = Article.published(params[:id])
   end
 end
