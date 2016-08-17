@@ -1,0 +1,220 @@
+<!--Content-->
+    <div class="col-md-12 col-sm-12 col-xs-12 contentportion" style="background: url('/assets/back1.jpg')">
+        <div class=" col-md-12">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <h1 style="font-size:40px;">
+                The Kitchen Sink.
+                <br />
+                Every Single Video.
+            </h1>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
+        <div class="col-md-12 contentportionpara">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <p style="padding-top:0px !important;font-size:19px !important;padding-bottom:80px;">
+                    If you're browsing for something in particular, or simply want a quick<br />
+                    way to see what's new at Laracasts, this is the page for you.
+                </p>
+            </div>
+            <div class="col-md-3"></div>
+
+        </div>
+
+        <!--<div class="col-md-12 contentportionparaspan">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <span><button type="button" class="btn buttonstyling">Join Now</button></span>
+                 </div>
+            <div class="col-md-3"></div>
+
+        </div>-->
+
+    </div>
+
+
+    <!--Two Sections-->
+    <div class="clearfix col-xs-12 col-sm-12 col-md-12 lessonspor">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+
+                    <div class="clearfix col-xs-12 col-sm-12 col-md-12" style="padding-top:70px;">
+
+                        <!--Left side-->
+                        <div class="col-xs-12 col-sm-3 col-md-3">
+                            <!--  Left portions-->
+                            <div class="panel panel-primary categoryleft">
+                                <div class="panel-heading">Hapus Filter</div>
+
+                                <div class="panel-body">
+                                    <h3>Difficulty</h3>
+
+                                    <div>
+                                        <label>
+                                            <input type="radio" name="order" id="order_0">
+                                            Popular
+                                        </label>
+
+                                        <br>
+                                        <label>
+                                            <input type="radio" name="order" id="order_1" value="low-high">
+                                            Price Low to High
+                                        </label>
+                                        <br>
+                                        <label>
+                                            <input type="radio" name="order" id="order_2" value="high-low">
+                                            Price High to Low
+                                        </label>
+                                        <br>
+
+
+                                        <!--Second-->
+
+                                        <h3>Lesson Type</h3>
+
+                                        <label>
+                                            <input type="radio" name="order11">
+                                            Popular Lessons
+                                        </label>
+
+                                        <br>
+                                        <label>
+                                            <input type="radio" name="order11"  value="low-high">
+                                            Single Lessons
+                                        </label>
+                                        <br>
+                                        <label>
+                                            <input type="radio" name="order11"  value="high-low">
+                                            Single Episode
+                                        </label>
+
+
+                                        <!--Third-->
+
+
+                                        <h3>Length</h3>
+
+                                        <label>
+                                            <input type="radio" name="order22" id="order_0">
+                                            0 -10 minutes
+                                        </label>
+
+                                        <br>
+                                        <label>
+                                            <input type="radio" name="order22" id="order_1" value="low-high">
+                                            10 -12 minutes
+                                        </label>
+                                        <br>
+                                        <label>
+                                            <input type="radio" name="order22" id="order_2" value="high-low">
+                                            20-30 minutes
+                                        </label>
+
+
+
+
+
+                                    </div>
+
+
+
+                                </div>
+                                <div>
+                                    <button type="submit" class="btn buttonstylingsignuplessons">Setel Ulang Filters</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--right side-->
+                        <div class="clearfix clearfix col-xs-12 col-sm-9 col-md-9">
+
+                            <% @articles.each do |article| %>
+                              <% if article == @articles.first %>
+                                <div class=" col-xs-12 col-sm-12 col-md-12 coloringdvide">
+                                    <div class="body-text-container clearfix col-xs-12 col-sm-12 col-md-12 coloringdvide11" style="border: 1px solid #DCDBDB">
+
+                                        <div class="col-md-2 clearfix">
+                                            <%= image_tag(article.cover, class: 'img-responsive', style: 'width:100%') %>
+                                        </div>
+
+                                        <div class="col-md-7 spacing1">
+                                            <%= link_to article_path(article.series.title, article) do %>
+                                              <h4><%= article.title %></h4>
+                                            <% end %>
+
+                                            <%= link_to series_path(article.series) do %>
+                                              <h5><%= article.series.title %></h5>
+                                            <% end %>
+                                        </div>
+                                        <div class="col-md-3 spacing2">
+                                            <span><%= article.created_at.strftime '%d %m %Y' %></span>
+                                        </div>
+                                    </div>
+                                </div>
+                              <% else %>
+                                <div class=" col-xs-12 col-sm-12 col-md-12 coloringdvide topspace">
+                                    <div class="body-text-container clearfix col-xs-12 col-sm-12 col-md-12 coloringdvide11" style="border: 1px solid #DCDBDB">
+
+                                        <div class="col-md-2 clearfix">
+                                            <%= image_tag(article.cover, class: 'img-responsive', style: 'width:100%') %>
+                                        </div>
+
+                                        <div class="col-md-7 spacing1">
+                                            <%= link_to article_path(article.series.title, article) do %>
+                                              <h4><%= article.title %></h4>
+                                            <% end %>
+                                            
+                                            <%= link_to series_path(article.series) do %>
+                                              <h5><%= article.series.title %></h5>
+                                            <% end %>
+                                        </div>
+                                        <div class="col-md-3 spacing2">
+                                            <span><%= article.created_at.strftime '%d %m %Y' %></span>
+                                        </div>
+                                    </div>
+                                </div>
+                              <% end %>
+                            <% end %>                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--Pagination-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+
+                <div class="clearfix col-xs-12 col-sm-12 col-md-12" style="text-align:center">
+                    <nav>
+                        <ul class="pagination">
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+
+        </div>
+    </div>

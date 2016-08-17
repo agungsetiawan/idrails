@@ -37,7 +37,9 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse customCollapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav" style="margin:0px;padding-top:5px;">
-                        <li><a href="#" style="color:white;">Library <span class="sr-only">(current)</span></a></li>
+                        <li>
+                            <%= link_to "Library", articles_path('tutorial-ruby-on-rails'), style: 'color:white' %>
+                        </li>
                         <li>
                             <%= link_to "Series", series_index_path('tutorial-ruby-on-rails'), style: 'color:white' %>
                         </li>

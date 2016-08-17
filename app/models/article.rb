@@ -19,9 +19,9 @@ class Article < ActiveRecord::Base
 
   def self.published(id=nil)
     if id
-      where(published: true, id: id).first
+      where(published: true, id: id).order(created_at: :desc).first
     else
-      where(published: true)
+      where(published: true).order(created_at: :desc)
     end
   end
 end

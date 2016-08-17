@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get '/s/tutorial-ruby-on-rails/:id', to: 'series#public_show', as: 'series'
   get '/a/tutorial-ruby-on-rails/*series/:id', to: 'articles#public_show', as: 'article'
   get '/s/*tutorial', to: 'series#public_index', as: 'series_index'
+  get '/a/*tutorial', to: 'articles#index', as: 'articles'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
