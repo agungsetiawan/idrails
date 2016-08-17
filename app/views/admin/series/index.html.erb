@@ -1,6 +1,6 @@
 <h3>Series That We Have So Far<h3>
 
-<%= link_to 'Add Series', new_series_path %>
+<%= link_to 'Add Series', new_admin_series_path %>
 
 <table border='1'>
   <tr>
@@ -20,7 +20,7 @@
         <td><%= s.title %></td>
         <td><%= s.level.titleize %></td>
         <td><%= s.finish? ? 'Complete' : 'On Progress' %></td>
-  		<td><%= link_to 'Detail', series_path(s) %></td>
+  		<td><%= link_to 'Detail', admin_series_path(s) %></td>
       </tr>
     <% end %>
   <% end %>

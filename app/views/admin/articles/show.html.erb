@@ -1,0 +1,24 @@
+<%= @article.title %>
+
+<div>
+  Series : <%= link_to @article.series.title, admin_series_path(@article.series) %>
+</div>
+
+<div>
+  Content : <%= markdown(@article.content) %>
+</div>
+
+<div>
+  Cover : 
+  <%= image_tag(@article.cover) if @article.cover? %>
+</div>
+
+<div>
+  Is Published? <%= @article.published? ? 'Yay' : 'Nay' %>
+</div>
+
+<div>
+  <%= link_to 'Back', admin_articles_path %>
+  <%= link_to 'Edit', edit_admin_article_path(@article) %>
+  <%= link_to 'Delete', admin_article_path(@article), method: :delete, data: {confirm: 'Really?'} %>
+</div>

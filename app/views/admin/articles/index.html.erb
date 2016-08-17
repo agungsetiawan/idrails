@@ -1,6 +1,6 @@
 <h3>All Articles We Have, So Far</h3>
 
-<%= link_to 'Add Article', new_article_path %>
+<%= link_to 'Add Article', new_admin_article_path %>
 
 <table border='1'>
   <tr>
@@ -17,7 +17,7 @@
       <tr>
         <td><%= a.title %></td>
         <td><%= a.published? ? 'Live' : 'On Progress' %></td>
-  		<td><%= link_to 'Detail', article_path(a) %></td>
+  		<td><%= link_to 'Detail', admin_article_path(a) %></td>
       </tr>
     <% end %>
   <% end %>

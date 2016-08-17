@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  scope '/kepo' do
+  namespace :admin do
     resources :series
     resources :articles
   end

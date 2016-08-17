@@ -29,7 +29,7 @@
 	  <tr>
 	    <td><%= a.title %></td>
 	    <td><%= a.published? ? 'Live' : 'On Progress' %></td>
-		<td><%= link_to 'Detail', article_path(a) %></td>
+		<td><%= link_to 'Detail', admin_article_path(a) %></td>
 	  </tr>
 	<% end %>
   </table>
@@ -38,11 +38,11 @@
 <% end %>
 
 <div>
-  <%= link_to 'Add Article', new_article_path(series_id: @series.id) %>
+  <%= link_to 'Add Article', new_admin_article_path(series_id: @series.id) %>
 </div>
 
 <div>
-  <%= link_to 'Back', series_index_path %>
-  <%= link_to 'Edit', edit_series_path(@series) %>
-  <%= link_to 'Delete', series_path(@series), method: :delete, data: {confirm: 'Really?'} %>
+  <%= link_to 'Back', admin_series_index_path %>
+  <%= link_to 'Edit', edit_admin_series_path(@series) %>
+  <%= link_to 'Delete', admin_series_path(@series), method: :delete, data: {confirm: 'Really?'} %>
 </div>
