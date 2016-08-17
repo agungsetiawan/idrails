@@ -29,6 +29,10 @@
     <% end %>
   </div>
   <div>
+    <%= f.label :published %>
+    <%= f.check_box :published %>
+  </div>
+  <div>
   	<%= f.submit 'Save It' %>
   	<%= link_to 'Back', admin_articles_path %>
   </div>
