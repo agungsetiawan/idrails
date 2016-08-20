@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root 'home#index'
+  post '/', to: 'home#supporters', as: 'home'
   
   namespace :admin do
     resources :series
