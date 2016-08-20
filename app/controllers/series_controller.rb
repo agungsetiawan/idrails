@@ -4,6 +4,6 @@ class SeriesController < ApplicationController
   end
 
   def index
-    @series = Series.available
+    @series = Series.available.paginate(per_page:8,page: params[:page])
   end
 end
