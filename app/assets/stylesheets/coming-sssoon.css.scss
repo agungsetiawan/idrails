@@ -652,7 +652,7 @@ h1 small, h2 small, h3 small, h1 .small, h2 .small, h3 .small {
 
 
 .main{
-    background: url('mac.jpg');
+    background: asset-url('mac.jpg');
     background-position-x: center;
     background-size: cover;
     height: auto;
